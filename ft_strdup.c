@@ -6,7 +6,7 @@
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 18:24:51 by tboos             #+#    #+#             */
-/*   Updated: 2015/11/05 00:11:36 by tboos            ###   ########.fr       */
+/*   Updated: 2016/01/16 18:32:37 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,6 @@ char			*ft_strdup(const char *s)
 
 	i = 0;
 	new = (char *)malloc(sizeof(char) * ft_strlen(s));
-	while (*((char *)s))
-	{
-		new[i] = ((char *)s)[i];
-		s++;
-		i++;
-	}
+	new = ft_strcpy(new, s);
 	return (new);
 }

@@ -6,7 +6,7 @@
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 18:24:51 by tboos             #+#    #+#             */
-/*   Updated: 2015/11/05 00:11:36 by tboos            ###   ########.fr       */
+/*   Updated: 2016/01/16 16:56:12 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 int		ft_strequ(char const *s1, char const *s2)
 {
-	return (!(ft_strcmp(s1, s2)));
+	if (*s1 || *s2)
+		return (!(ft_strcmp(s1, s2)));
+	return (1);
 }
