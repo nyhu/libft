@@ -6,7 +6,7 @@
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 18:24:51 by tboos             #+#    #+#             */
-/*   Updated: 2016/01/16 18:08:37 by tboos            ###   ########.fr       */
+/*   Updated: 2016/01/19 17:43:24 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,10 @@ char	*ft_strjoin(char const *s1, char const*s2)
 {
 	char	*cpy;
 
-	cpy = ft_strnew(ft_strlen(s1) + ft_strlen(s2) - 1);
+	cpy = ft_strnew(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!cpy)
 		return (NULL);
 	cpy = ft_strcpy(cpy, s1);
-	if (s2)
-		cpy = ft_strcat(cpy, s2);
+	cpy = ft_strcat(cpy, s2);
 	return (cpy);
 }

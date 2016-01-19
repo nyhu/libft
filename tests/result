@@ -12,8 +12,8 @@ Test [32m[Success][0m
 End unit test : [32m[Success][0m
 
 Begin unit test : [34mft_memccpy[0m
-Test [31m[Fail][0m
-End unit test : [31m[Fail][0m
+Test [32m[Success][0m
+End unit test : [32m[Success][0m
 
 Begin unit test : [34mft_memmove[0m
 Test : "onjour tout le monde" and "bonjour tout le monde" (20) { "bonjour tout le mond" - "bonjour tout le mondde" } [32m[Success][0m
@@ -71,32 +71,32 @@ Test : { "Hello world ! ergnwerignwergn wekrgnwmerngwerngqoi weqfewnfqkowenf qkn
 End unit test : [32m[Success][0m
 
 Begin unit test : [34mft_strchr[0m
-Test : "Hello world !" { 0x10c553cf6 - 0x10c553cf6 } [32m[Success][0m
-Test : "Hello world !" { 0x10c553cf7 - 0x10c553cf7 } [32m[Success][0m
-Test : "Hello world !" { 0x10c553cea - 0x10c553cea } [32m[Success][0m
+Test : "Hello world !" { 0x10a2dccf6 - 0x10a2dccf6 } [32m[Success][0m
+Test : "Hello world !" { 0x10a2dccf7 - 0x10a2dccf7 } [32m[Success][0m
+Test : "Hello world !" { 0x10a2dccea - 0x10a2dccea } [32m[Success][0m
 Test : "Hello world !" { 0x0 - 0x0 } [32m[Success][0m
 End unit test : [32m[Success][0m
 
 Begin unit test : [34mft_strrchr[0m
-Test : "Hello world !" { 0x10c553cea - 0x10c553cea } [32m[Success][0m
-Test : "Hello world !" { 0x10c553cf1 - 0x10c553cf1 } [32m[Success][0m
-Test : "Hello world !" { 0x10c553cf7 - 0x10c553cf7 } [32m[Success][0m
-Test : "Hello world !" { 0x10c553cf6 - 0x10c553cf6 } [32m[Success][0m
+Test : "Hello world !" { 0x10a2dccea - 0x10a2dccea } [32m[Success][0m
+Test : "Hello world !" { 0x10a2dccf1 - 0x10a2dccf1 } [32m[Success][0m
+Test : "Hello world !" { 0x10a2dccf7 - 0x10a2dccf7 } [32m[Success][0m
+Test : "Hello world !" { 0x10a2dccf6 - 0x10a2dccf6 } [32m[Success][0m
 End unit test : [32m[Success][0m
 
 Begin unit test : [34mft_strstr[0m
-Test : Compare "Welcome !" and "come" { 0x10c553f63 - 0x10c553f63 } [32m[Success][0m
+Test : Compare "Welcome !" and "come" { 0x10a2dcf63 - 0x10a2dcf63 } [32m[Success][0m
 Test : Compare "Bonjour" and "Bonjour " { 0x0 - 0x0 } [32m[Success][0m
-Test : Compare "bonjour" and "" { 0x10c553b8e - 0x10c553b8e } [32m[Success][0m
-Test : Compare "bonjour" and "r" { 0x10c553b94 - 0x10c553b94 } [32m[Success][0m
+Test : Compare "bonjour" and "" { 0x10a2dcb8e - 0x10a2dcb8e } [32m[Success][0m
+Test : Compare "bonjour" and "r" { 0x10a2dcb94 - 0x10a2dcb94 } [32m[Success][0m
 End unit test : [32m[Success][0m
 
 Begin unit test : [34mft_strnstr[0m
 Test : Compare "tvaaabcd" and "aabc" (4) { 0x0 - 0x0 } [32m[Success][0m
-Test : Compare "tvaaabcd" and "aabc" (8) { 0x10c554005 - 0x10c554005 } [32m[Success][0m
-Test : Compare "" and "" (5) { 0x10c553df8 - 0x10c553df8 } [32m[Success][0m
+Test : Compare "tvaaabcd" and "aabc" (8) { 0x10a2dd005 - 0x10a2dd005 } [32m[Success][0m
+Test : Compare "" and "" (5) { 0x10a2dcdf8 - 0x10a2dcdf8 } [32m[Success][0m
 Test : Compare "" and "e" (1) { 0x0 - 0x0 } [32m[Success][0m
-Test : Compare "Bonjour" and "Bonjour" (7) { 0x10c553b86 - 0x10c553b86 } [32m[Success][0m
+Test : Compare "Bonjour" and "Bonjour" (7) { 0x10a2dcb86 - 0x10a2dcb86 } [32m[Success][0m
 Test : Compare "Bonjour" and "bonjour" (7) { 0x0 - 0x0 } [32m[Success][0m
 End unit test : [32m[Success][0m
 
@@ -1697,9 +1697,9 @@ Begin unit test : [34mft_memdel[0m
 End unit test : [32m[Success][0m
 
 Begin unit test : [34mft_strnew & ft_strdel[0m
-Test : 1024 [32m[Success][0m
+Test : 1024 [31m[Fail][0m
 Test : 0 [32m[Success][0m
-End unit test : [32m[Success][0m
+End unit test : [31m[Fail][0m
 
 Begin unit test : [34mft_strclr[0m
 Test : "Welcome !" [32m[Success][0m
@@ -1750,5 +1750,43 @@ End unit test : [32m[Success][0m
 Begin unit test : [34mft_strjoin[0m
 Test : Join "Bonjour" and " tout le monde" { "Bonjour tout le monde" } [32m[Success][0m
 Test : Join "" and "Hello" { "Hello" } [32m[Success][0m
+Test : Join "" and "" { "" } [32m[Success][0m
+Test : Join "Hello" and " world !" { "Hello world !" } [32m[Success][0m
+End unit test : [32m[Success][0m
 
-[31mAn segfault is appear in test of : [0m"ft_strjoin"
+Begin unit test : [34mft_strtrim[0m
+Test : Trim "  
+Welcome !   
+	
+	
+" { "Welcome !" } [32m[Success][0m
+Test : Trim "       " { "(null)" } [32m[Success][0m
+Test : Trim "teerierginerngeringerge   	" { "teerierginerngeringerge" } [32m[Success][0m
+Test : Trim " teerierginerngeringerge" { "teerierginerngeringerge" } [32m[Success][0m
+Test : Trim "" { "(null)" } [32m[Success][0m
+End unit test : [32m[Success][0m
+
+Begin unit test : [34mft_strsplit[0m
+Test : "****Hello***World * *!" ('*')
+	Compare : "Hello" - "Hello"
+	Compare : "World " - "World "
+	Compare : " " - " "
+	Compare : "!" - "!"
+Status : [32m[Success][0m
+Test : "**********************" ('*')
+Status : [32m[Success][0m
+Test : "==========" ('*')
+	Compare : "==========" - "=========="
+Status : [32m[Success][0m
+End unit test : [32m[Success][0m
+
+Begin unit test : [34mft_itoa[0m
+Test : 45 { "45" - "45" } [32m[Success][0m
+Test : 0 { "0" - "0" } [32m[Success][0m
+Test : -45 { "-45" - "-45" } [32m[Success][0m
+Test : -2147483648 { "-2147483648" - "-2147483648" } [32m[Success][0m
+Test : 2147483647 { "2147483647" - "2147483647" } [32m[Success][0m
+Test : -1 { "-1" - "-1" } [32m[Success][0m
+End unit test : [32m[Success][0m
+
+Begin unit test : [34mft_putchar[0m

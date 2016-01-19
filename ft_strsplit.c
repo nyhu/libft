@@ -6,7 +6,7 @@
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 18:24:51 by tboos             #+#    #+#             */
-/*   Updated: 2015/11/05 00:11:36 by tboos            ###   ########.fr       */
+/*   Updated: 2016/01/19 19:15:14 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,7 @@ static char	**ft_strsplitcpy(char *cpy, char c, size_t j, size_t i)
 
 	split = (char **)malloc(sizeof(char *) * (j + 1));
 	if (!split)
-		return (NULL);
-	i = 0;
+		return (NULL);	
 	j = 0;
 	while (cpy[i])
 	{
@@ -49,9 +48,8 @@ static char	**ft_strsplitcpy(char *cpy, char c, size_t j, size_t i)
 		while (cpy[i] == c)
 			i++;
 	}
-	free(split);
-	free(cpy);
-	return (NULL);
+	split[j] = NULL;
+	return (split);
 }
 
 char		**ft_strsplit(char const *s, char c)
@@ -63,8 +61,6 @@ char		**ft_strsplit(char const *s, char c)
 	while (*s == c)
 		s++;
 	cpy = ft_strdup(s);
-	if (!cpy)
-		return (NULL);
 	i = ft_strlen(cpy);
 	while (i && cpy[i - 1] == c)
 		i--;

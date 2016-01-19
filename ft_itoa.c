@@ -6,38 +6,45 @@
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 18:24:51 by tboos             #+#    #+#             */
-/*   Updated: 2015/11/05 00:11:36 by tboos            ###   ########.fr       */
+/*   Updated: 2016/01/19 20:19:07 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+static char	*ft_nbrchar(char *nbr, int n, int i)
+{
+	while (n)
+	{
+		nbr[i] = '0' - (n % 10);
+		n = n / 10;
+		i--;
+	}
+	return (nbr);
+}
+
+char		*ft_itoa(int n)
 {
 	int		m;
 	int		i;
 	char	*nbr;
 
+	i = -1;
 	m = n;
-	i = 1;
-	while (m > 0)
+	while (m)
 	{
 		m = m / 10;
 		i++;
 	}
 	if (n <= 0)
 		i++;
-	nbr = (char *)malloc(sizeof(char) * (i + 1));
-	if (!nbr)
-		return (NULL);
-	nbr[i] = '\0';
-	m = n;
-	while (--i >= 0)
-	{
-		nbr[i] = '0' + n % 10;
-		n = n / 10;
-	}
-	if (m < 0)
+	nbr = ft_strnew(i + 2);
+	nbr[i + 1] = '\0';
+	if (n < 0)
 		nbr[0] = '-';
-	return (nbr);
+	if (n > 0)
+		n = -n;
+	if (!n)
+		nbr[0] = '0';
+	return (ft_nbrchar(nbr, n, i));
 }

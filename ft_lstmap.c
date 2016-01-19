@@ -6,7 +6,7 @@
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 18:24:51 by tboos             #+#    #+#             */
-/*   Updated: 2015/11/05 00:11:36 by tboos            ###   ########.fr       */
+/*   Updated: 2016/01/19 21:26:11 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
 	t_list	*cpy;
 	t_list	*rabbit;
+	t_list	*turtle;
 
 	cpy = NULL;
 	if (lst)
@@ -29,13 +30,13 @@ t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	rabbit = cpy;
 	while (lst)
 	{
-		rabbit = rabbit->next;
+		turtle = rabbit;
 		rabbit = f(lst);
 		rabbit = ft_lstnew(rabbit->content, rabbit->content_size);
 		if (!rabbit) 
 			return (NULL);
+		turtle->next = rabbit;
 		lst = lst->next;
-		rabbit->next = NULL;
 	}
 	return (cpy);
 }
