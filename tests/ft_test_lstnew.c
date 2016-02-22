@@ -11,7 +11,7 @@ int	ft_test_lstnew(void)
 	elem = ft_lstnew((void const *)str, strlen(str));
 	if (!elem)
 		++res;
-	else if (elem->content != (void *)str ||
+	else if (ft_strncmp(elem->content, str, ft_strlen(str)) != 0 ||
 			 elem->content_size != strlen(str) ||
 			 elem->next != 0)
 		++res;
