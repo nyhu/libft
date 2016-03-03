@@ -6,7 +6,7 @@
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 18:24:51 by tboos             #+#    #+#             */
-/*   Updated: 2016/01/19 23:35:53 by tboos            ###   ########.fr       */
+/*   Updated: 2016/03/03 10:52:10 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,10 @@ void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
+char	*ft_strslashjoin(char *s1, char *s2);
 void	ft_usage(char *name, char *usage);
 void	ft_exit(int mode);
+int		ft_freegiveone(void *kill);
+int		ft_freegivezero(void *kill);
 
 #endif
