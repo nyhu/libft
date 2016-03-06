@@ -6,7 +6,7 @@
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 18:24:51 by tboos             #+#    #+#             */
-/*   Updated: 2016/03/03 15:57:38 by tboos            ###   ########.fr       */
+/*   Updated: 2016/03/05 22:12:51 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	ft_usage(char *name, char *usage);
 void	ft_exit(int mode);
 int		ft_freegiveone(void *kill);
 int		ft_freegivezero(void *kill);
+void	ft_putcstr(char *str, char c, int size, char pos);
+void	ft_putstr_nbr_str(char *str, int nbr, char *tab);
 
 void				*ft_memset(void *s, int c, size_t n);
 void				ft_bzero(void *s, size_t n);
