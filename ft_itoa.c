@@ -6,7 +6,7 @@
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 18:24:51 by tboos             #+#    #+#             */
-/*   Updated: 2016/03/06 08:01:45 by tboos            ###   ########.fr       */
+/*   Updated: 2016/03/06 08:21:30 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char		*ft_itoa(int n)
 	int		i;
 	char	*nbr;
 
-	i = 0;
+	i = -1;
 	m = n;
 	while (m)
 	{
@@ -38,7 +38,7 @@ char		*ft_itoa(int n)
 	}
 	if (n <= 0)
 		i++;
-	nbr = ft_strnew(i);
+	nbr = ft_strnew(i + 1);
 	if (n < 0)
 		nbr[0] = '-';
 	if (n > 0)

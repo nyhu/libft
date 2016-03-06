@@ -1,4 +1,16 @@
-# include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putcstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/03/06 08:38:51 by tboos             #+#    #+#             */
+/*   Updated: 2016/03/06 08:39:58 by tboos            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_putcstr(char *str, char c, int size, char pos)
 {
@@ -24,6 +36,6 @@ void	ft_putcstr(char *str, char c, int size, char pos)
 				str++;
 			}
 		}
-	ft_putstr(tab);
+		ft_putstr(tab);
 	}
 }

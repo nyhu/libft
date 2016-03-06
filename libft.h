@@ -6,7 +6,7 @@
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 18:24:51 by tboos             #+#    #+#             */
-/*   Updated: 2016/03/05 22:12:51 by tboos            ###   ########.fr       */
+/*   Updated: 2016/03/06 08:41:26 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@
 # include <ctype.h>
 # include <unistd.h>
 
-char	*ft_strslashjoin(char *s1, char *s2);
-void	ft_usage(char *name, char *usage);
-void	ft_exit(int mode);
-int		ft_freegiveone(void *kill);
-int		ft_freegivezero(void *kill);
-void	ft_putcstr(char *str, char c, int size, char pos);
-void	ft_putstr_nbr_str(char *str, int nbr, char *tab);
+char				*ft_strslashjoin(char *s1, char *s2);
+void				ft_usage(char *name, char *usage);
+void				ft_exit(int mode);
+int					ft_freegiveone(void *kill);
+int					ft_freegivezero(void *kill);
+void				ft_putcstr(char *str, char c, int size, char pos);
+void				ft_putstr_nbr_str(char *str, int nbr, char *tab);
 
 void				*ft_memset(void *s, int c, size_t n);
 void				ft_bzero(void *s, size_t n);
@@ -94,6 +94,5 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-
 
 #endif
