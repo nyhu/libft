@@ -6,7 +6,7 @@
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 18:24:51 by tboos             #+#    #+#             */
-/*   Updated: 2016/03/06 08:41:26 by tboos            ###   ########.fr       */
+/*   Updated: 2016/03/07 15:11:43 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ int					ft_freegiveone(void *kill);
 int					ft_freegivezero(void *kill);
 void				ft_putcstr(char *str, char c, int size, char pos);
 void				ft_putstr_nbr_str(char *str, int nbr, char *tab);
+void				ft_putstr_str_str_fd(char *name, char *file,
+					char *error, int fd);
+char				*ft_st_itoa(int n);
 
 void				*ft_memset(void *s, int c, size_t n);
 void				ft_bzero(void *s, size_t n);
