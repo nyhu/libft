@@ -23,7 +23,7 @@ SRC = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c \
 	ft_strncat.c ft_strncmp.c ft_strncpy.c ft_strnequ.c ft_strnew.c \
 	ft_strnstr.c ft_strrchr.c ft_strsplit.c ft_strstr.c ft_strsub.c \
 	ft_strtrim.c ft_tolower.c ft_toupper.c ft_exit.c ft_usage.c \
-	ft_strslashjoin.c ft_freegiveone.c ft_putcstr.c ft_time.c
+	ft_strslashjoin.c ft_freegiveone.c ft_putcstr.c
 WSRC = $(wildcard : *.c)
 OBJ = $(SRC:.c=.o)
 HEAD = libft.h
