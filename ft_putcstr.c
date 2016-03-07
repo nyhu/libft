@@ -6,7 +6,7 @@
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/06 08:38:51 by tboos             #+#    #+#             */
-/*   Updated: 2016/03/07 13:52:11 by tboos            ###   ########.fr       */
+/*   Updated: 2016/03/07 16:00:15 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putcstr(char *str, char c, int size, char pos)
 	char	tab[512];
 	int		i;
 
-	if (size < 512)
+	if (size < 512 && size > 0)
 	{
 		i = -1;
 		if (pos == 'L')
