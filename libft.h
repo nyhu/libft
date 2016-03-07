@@ -6,7 +6,7 @@
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 18:24:51 by tboos             #+#    #+#             */
-/*   Updated: 2016/03/07 15:11:43 by tboos            ###   ########.fr       */
+/*   Updated: 2016/03/07 18:32:47 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,13 @@
 # include <stdlib.h>
 # include <ctype.h>
 # include <unistd.h>
+# define ANSI_COLOR_RED     "\x1b[31m"
+# define ANSI_COLOR_GREEN   "\x1b[32m"
+# define ANSI_COLOR_YELLOW  "\x1b[33m"
+# define ANSI_COLOR_BLUE    "\x1b[34m"
+# define ANSI_COLOR_MAGENTA "\x1b[35m"
+# define ANSI_COLOR_CYAN    "\x1b[36m"
+# define ANSI_COLOR_RESET   "\x1b[0m"
 
 char				*ft_strslashjoin(char *s1, char *s2);
 void				ft_usage(char *name, char *usage);
@@ -29,6 +36,7 @@ void				ft_putstr_nbr_str(char *str, int nbr, char *tab);
 void				ft_putstr_str_str_fd(char *name, char *file,
 					char *error, int fd);
 char				*ft_st_itoa(int n);
+void				ft_putcolendl(char const *s, char const *col);
 
 void				*ft_memset(void *s, int c, size_t n);
 void				ft_bzero(void *s, size_t n);
