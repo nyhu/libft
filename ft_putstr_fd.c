@@ -6,7 +6,7 @@
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 18:24:51 by tboos             #+#    #+#             */
-/*   Updated: 2016/03/07 15:14:25 by tboos            ###   ########.fr       */
+/*   Updated: 2016/03/10 13:51:32 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ void	ft_putstr_fd(char const *s, int fd)
 	write(fd, s, ft_strlen(s));
 }
 
-void				ft_putstr_str_str_fd(char *name, char *file,
-					char *error, int fd)
+void	ft_putstr_str_str_fd(char *name, char *file,
+		char *error, int fd)
 {
 	if (name)
 		ft_putstr_fd(name, fd);

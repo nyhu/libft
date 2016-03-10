@@ -6,7 +6,7 @@
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 18:24:51 by tboos             #+#    #+#             */
-/*   Updated: 2016/03/08 14:56:46 by tboos            ###   ########.fr       */
+/*   Updated: 2016/03/10 13:50:47 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ void	ft_putcolendl(char const *s, char const *col)
 		ft_putstr(ANSI_COLOR_RESET);
 	if (s)
 	{
-	ft_putstr(s);
-	ft_putstr(ANSI_COLOR_RESET);
-	ft_putstr("\n");
+		ft_putstr(s);
+		ft_putstr(ANSI_COLOR_RESET);
+		ft_putstr("\n");
 	}
 }
