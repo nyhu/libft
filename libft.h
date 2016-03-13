@@ -6,7 +6,7 @@
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 18:24:51 by tboos             #+#    #+#             */
-/*   Updated: 2016/03/06 08:41:26 by tboos            ###   ########.fr       */
+/*   Updated: 2016/03/08 14:11:08 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,13 @@
 # include <stdlib.h>
 # include <ctype.h>
 # include <unistd.h>
+# define ANSI_COLOR_RED     "\x1b[31m"
+# define ANSI_COLOR_GREEN   "\x1b[32m"
+# define ANSI_COLOR_YELLOW  "\x1b[33m"
+# define ANSI_COLOR_BLUE    "\x1b[34m"
+# define ANSI_COLOR_MAGENTA "\x1b[35m"
+# define ANSI_COLOR_CYAN    "\x1b[36m"
+# define ANSI_COLOR_RESET   "\x1b[0m"
 
 /* Standard prog fonction*/
 void				ft_usage(char *name, char *usage);
@@ -89,9 +96,14 @@ void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 /* CHAR <-> INT */
 int					ft_atoi(const char *str);
 char				*ft_itoa(int n);
+char				*ft_st_itoa(int n);
 
 /* Padding et autre en attente printf */
 void				ft_putcstr(char *str, char c, int size, char pos);
+void				ft_putcolendl(char const *s, char const *col);
+void				ft_putstr_nbr_str(char *str, int nbr, char *tab);
+void				ft_putstr_str_str_fd(char *name, char *file,
+					char *error, int fd);
 void				ft_putstr_nbr_str(char *str, int nbr, char *tab);
 
 /* PRINT */

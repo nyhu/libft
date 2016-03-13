@@ -9,7 +9,7 @@
 #   Updated: 2015/11/05 00:11:36 by tboos            ###   ########.fr       #
 #                                                                            #
 # ************************************************************************** #
-#NOTE: -l DIR pour inclure un dossier contenant des headers!
+
 LIB = libft.a
 FLAGS = -Wall -Wextra -Werror
 SRC = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c \
