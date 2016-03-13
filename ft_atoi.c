@@ -26,7 +26,7 @@ int		ft_atoi(const char *str)
 		signe = -1;
 	if (*str == '-' || *str == '+')
 		str++;
-	while ('9' >= *str && *str >= '0' && *str != '\0')
+	while ('9' >= *str && *str >= '0' && *str)
 	{
 		target = (target * 10) + (*str - '0');
 		str++;
