@@ -36,6 +36,7 @@ char				*ft_strnew(size_t size);
 void				ft_memdel(void **ap);
 int					ft_freegiveone(void *kill);
 void				ft_strdel(char **as);
+void				ft_strtabfree(char **tab);
 
 /* SIZING */
 size_t				ft_strlen(const char *s);

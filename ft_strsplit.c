@@ -12,27 +12,12 @@
 
 #include "libft.h"
 
-static char	**ft_strsplitclean(char **split, char *cpy, size_t nmot)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < nmot)
-	{
-		split[i] = ft_strdup(split[i]);
-		i++;
-	}
-	split[i] = NULL;
-	free(cpy);
-	return (split);
-}
-
 static char	**ft_strsplitcpy(char *cpy, char c, size_t j, size_t i)
 {
 	char	**split;
+	char	**result;
 
-	split = (char **)malloc(sizeof(char *) * (j + 1));
-	if (!split)
+	if (!(split = (char **)ft_memalloc(sizeof(char *) * (j + 1))))
 		return (NULL);
 	j = 0;
 	while (cpy[i])
@@ -40,16 +25,18 @@ static char	**ft_strsplitcpy(char *cpy, char c, size_t j, size_t i)
 		split[j] = &(cpy[i]);
 		while (cpy[i] != c && cpy[i])
 			i++;
-		if (!cpy[i])
-			return (ft_strsplitclean(split, cpy, j + 1));
 		cpy[i] = '\0';
-		i++;
 		j++;
+		if (!(cpy[i]))
+			break ;
+		i++;
 		while (cpy[i] == c)
 			i++;
 	}
 	split[j] = NULL;
-	return (split);
+	result = ft_strtabdup(split);
+	free(split);
+	return (result);
 }
 
 char		**ft_strsplit(char const *s, char c)
@@ -65,7 +52,7 @@ char		**ft_strsplit(char const *s, char c)
 	while (i && cpy[i - 1] == c)
 		i--;
 	cpy[i] = '\0';
-	j = 1;
+	j = 0;
 	while (i > 0)
 	{
 		if (cpy[i] == c)
@@ -76,5 +63,5 @@ char		**ft_strsplit(char const *s, char c)
 		}
 		i--;
 	}
-	return (ft_strsplitcpy(cpy, c, j, i));
+	return ((j ? ft_strsplitcpy(cpy, c, j + 1, i) : NULL));
 }
