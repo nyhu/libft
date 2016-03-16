@@ -6,7 +6,7 @@
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 18:24:51 by tboos             #+#    #+#             */
-/*   Updated: 2016/02/22 21:13:19 by tboos            ###   ########.fr       */
+/*   Updated: 2016/03/16 11:40:28 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ char	*ft_strrchr(const char *s, int c)
 {
 	char	*p;
 
+	p = NULL;
 	if (c == 0)
 		return ((char *)(s + ft_strlen(s)));
 	s = ft_strchr(s, c);
