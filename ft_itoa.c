@@ -6,13 +6,13 @@
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 18:24:51 by tboos             #+#    #+#             */
-/*   Updated: 2016/03/16 14:34:59 by tboos            ###   ########.fr       */
+/*   Updated: 2016/03/16 14:40:04 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_nbrchar(char *nbr, long long int n, int i)
+static char	*ft_nbrchar(char *nbr, int n, int i)
 {
 	while (n)
 	{
@@ -23,11 +23,11 @@ static char	*ft_nbrchar(char *nbr, long long int n, int i)
 	return (nbr);
 }
 
-char		*ft_st_itoa(long long int n)
+char		*ft_st_itoa(int n)
 {
 	int			m;
 	int			i;
-	static char	nbr[36];
+	static char	nbr[12];
 
 	i = -1;
 	m = n;
@@ -48,7 +48,7 @@ char		*ft_st_itoa(long long int n)
 	return (ft_nbrchar(nbr, n, i));
 }
 
-char		*ft_itoa(long long int n)
+char		*ft_itoa(int n)
 {
 	int			m;
 	int			i;
