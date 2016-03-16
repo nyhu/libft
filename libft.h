@@ -6,7 +6,7 @@
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 18:24:51 by tboos             #+#    #+#             */
-/*   Updated: 2016/03/08 14:11:08 by tboos            ###   ########.fr       */
+/*   Updated: 2016/03/16 01:27:33 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,15 @@
 # define ANSI_COLOR_CYAN    "\x1b[36m"
 # define ANSI_COLOR_RESET   "\x1b[0m"
 
-/* Standard prog fonction*/
+/*
+** Standard Program Fonction
+*/
 void				ft_usage(char *name, char *usage);
 void				ft_exit(int mode);
 
-/* MEM Handle */
+/*
+** MEM Handle
+*/
 void				*ft_memalloc(size_t size);
 char				*ft_strnew(size_t size);
 void				ft_memdel(void **ap);
@@ -38,10 +42,14 @@ int					ft_freegiveone(void *kill);
 void				ft_strdel(char **as);
 void				ft_strtabfree(char **tab);
 
-/* SIZING */
+/*
+** SIZING
+*/
 size_t				ft_strlen(const char *s);
 
-/* STRING DUP */
+/*
+** STRING DUP
+*/
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const*s2);
 char				**ft_strtabdup(char **src);
@@ -49,31 +57,41 @@ char				*ft_strdup(const char *s);
 char				*ft_strmap(char const *s, char (*f)(char));
 char				*ft_strmapi(char const *s, char(*f)(unsigned int, char));
 
-/* STRING WORK */
+/*
+** STRING WORK
+*/
 char				*ft_strslashjoin(char *s1, char *s2);
 char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
 
-/* COPY */
+/*
+** COPY
+*/
 void				*ft_memcpy(void *dest, const void *src, size_t n);
 void				*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void				*ft_memmove(void *dest, const void *src, size_t n);
 char				*ft_strcpy(char *dest, const char *src);
 char				*ft_strncpy(char *dest, const char *src, size_t n);
 
-/* CAT */
+/*
+** CAT
+*/
 char				*ft_strcat(char *dest, const char *src);
 char				*ft_strncat(char *dest, const char *src, size_t n);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 
-/* FIND */
+/*
+** FIND
+*/
 void				*ft_memchr(const void *s, int c, size_t n);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strstr(const char *haystack, const char *needle);
 char				*ft_strnstr(const char *s1, const char *s2, size_t n);
 
-/* COMPARE */
+/*
+** COMPARE
+*/
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 int					ft_strcmp(const char *s1, const char *s2);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
@@ -87,19 +105,25 @@ int					ft_isprint(int c);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
 
-/* STRING SET */
+/*
+** STRING SET
+*/
 void				*ft_memset(void *s, int c, size_t n);
 void				ft_bzero(void *s, size_t n);
 void				ft_strclr(char *s);
 void				ft_striter(char *s, void (*f)(char *));
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 
-/* CHAR <-> INT */
+/*
+** CHAR <-> INT
+*/
 int					ft_atoi(const char *str);
 char				*ft_itoa(int n);
 char				*ft_st_itoa(int n);
 
-/* Padding et autre en attente printf */
+/*
+** Padding et autre en attente printf
+*/
 void				ft_putcstr(char *str, char c, int size, char pos);
 void				ft_putcolendl(char const *s, char const *col);
 void				ft_putstr_nbr_str(char *str, int nbr, char *tab);
@@ -107,7 +131,9 @@ void				ft_putstr_str_str_fd(char *name, char *file,
 					char *error, int fd);
 void				ft_putstr_nbr_str(char *str, int nbr, char *tab);
 
-/* PRINT */
+/*
+** PRINT
+*/
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
 void				ft_putendl(char const *s);
@@ -117,7 +143,9 @@ void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 
-/* LISTES */
+/*
+** LISTES
+*/
 typedef struct		s_list
 {
 	void			*content;
