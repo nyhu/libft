@@ -6,7 +6,7 @@
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/06 08:38:51 by tboos             #+#    #+#             */
-/*   Updated: 2016/03/07 21:26:01 by tboos            ###   ########.fr       */
+/*   Updated: 2016/03/16 12:36:20 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	ft_putcstr(char *str, char c, int size, char pos)
 				tab[i] = *(str++);
 		while (++i < size)
 			tab[i] = c;
-		tab[size] = '\0';
 		if (pos == 'R')
 		{
 			i = size - ft_strlen(str) - 1;
@@ -35,6 +34,7 @@ void	ft_putcstr(char *str, char c, int size, char pos)
 				str++;
 			}
 		}
+		tab[size] = '\0';
 		ft_putstr(tab);
 	}
 }
