@@ -6,7 +6,7 @@
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 18:24:51 by tboos             #+#    #+#             */
-/*   Updated: 2016/03/16 14:40:03 by tboos            ###   ########.fr       */
+/*   Updated: 2016/03/17 19:51:13 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@
 */
 void				ft_usage(char *name, char *usage);
 void				ft_exit(int mode);
+int					ft_status(int value);
 
 /*
 ** MEM Handle
