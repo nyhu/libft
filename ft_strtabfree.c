@@ -6,13 +6,13 @@
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/16 01:02:33 by tboos             #+#    #+#             */
-/*   Updated: 2016/03/16 01:03:26 by tboos            ###   ########.fr       */
+/*   Updated: 2016/03/18 18:15:47 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	strtabfree(char **tab)
+void	ft_strtabfree(char **tab)
 {
 	size_t	i;
 
