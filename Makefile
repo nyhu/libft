@@ -9,8 +9,9 @@
 #   Updated: 2015/11/05 00:11:36 by tboos            ###   ########.fr       #
 #                                                                            #
 # ************************************************************************** #
-
-LIB = libft.a
+.PHONY: mrproper
+.SUFFIXES:
+NAME = libft.a
 FLAGS = -Wall -Wextra -Werror
 SRC = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c \
 	ft_isprint.c ft_itoa.c ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstiter.c \
@@ -26,27 +27,22 @@ SRC = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c \
 	ft_strslashjoin.c ft_freegiveone.c ft_putcstr.c ft_strtabdup.c \
 	ft_strtabfree.c
 OBJ = $(SRC:.c=.o)
-HEAD = libft.h
 
-all: $(LIB)
+all: $(NAME)
+
+$(NAME): $(OBJ)
+	ar rc $@ $^
+	ranlib $@
 
 %.o: %.c
 	gcc $(FLAGS) -c $^
-
-$(LIB): $(OBJ)
-	ar rc $@ $^
-
-LIBD: $(LIB)
-	ranlib $(LIB)
 
 clean:
 	rm -f $(OBJ)
 
 fclean: mrproper
 
-.PHONY: clean mrproper
+re: fclean all
 
 mrproper: clean
-	rm -f $(LIB)
-
-re: fclean $(LIB)
+	rm -f $(NAME)
