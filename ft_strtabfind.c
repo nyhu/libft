@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strtabfind.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/04 18:24:51 by tboos             #+#    #+#             */
-/*   Updated: 2016/03/18 15:13:11 by tboos            ###   ########.fr       */
+/*   Created: 2016/03/18 15:06:09 by tboos             #+#    #+#             */
+/*   Updated: 2016/03/18 15:13:56 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *haystack, const char *needle)
+char	*ft_strtabfind(char **tab, char *needle)
 {
-	size_t		i;
+	int		i;
 
-	if (!needle || !(*needle))
-		return ((char *)haystack);
-	while (*haystack)
+	i = 0;
+	while (tab[i])
 	{
-		i = 0;
-		if (*haystack == *needle)
-			while (haystack[i] == needle[i] && needle[i] && haystack[i])
-				i++;
-		if (needle[i] == '\0')
-			return ((char *)haystack);
-		haystack++;
+		if (ft_strstr(tab[i], needle))
+			return (tab[i]);
+		i++;
 	}
 	return (NULL);
 }
