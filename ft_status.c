@@ -6,13 +6,13 @@
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/17 15:42:15 by tboos             #+#    #+#             */
-/*   Updated: 2016/03/17 19:51:14 by tboos            ###   ########.fr       */
+/*   Updated: 2016/03/18 17:50:31 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_status(int value);
+int		ft_status(int value)
 {
 	static int	status = 0;
 
