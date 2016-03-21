@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_sorted_list_merge.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: tboos <toussaint.boos@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/04 18:24:51 by tboos             #+#    #+#             */
-/*   Updated: 2016/02/22 20:30:02 by tboos            ###   ########.fr       */
+/*   Created: 2015/12/16 22:38:48 by tboos             #+#    #+#             */
+/*   Updated: 2015/12/16 22:41:11 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "list.h"
 
-void	ft_lstadd(t_list **alst, t_list *new)
+void		ft_sorted_list_merge(t_list **begin1, t_list *begin2, int (*cmp)())
 {
-	if (alst && *alst && new)
+	t_list	*memo;
+
+	while (begin2)
 	{
-		new->next = *alst;
-		*alst = new;
+		memo = begin2->next;
+		ft_sorted_list_insert(begin1, begin2, cmp);
+		begin2 = memo;
 	}
 }

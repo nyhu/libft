@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 18:24:51 by tboos             #+#    #+#             */
-/*   Updated: 2016/02/22 20:35:04 by tboos            ###   ########.fr       */
+/*   Updated: 2016/02/22 20:35:57 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+t_list	*ft_lstnew(void const *data, size_t data_size)
 {
-	t_list	*cpy;
-	t_list	*rabbit;
-	t_list	*turtle;
+	t_list	*new;
 
-	cpy = NULL;
-	if (lst)
+	if (!(new = (t_list *)malloc(sizeof(t_list))))
+		return (NULL);
+	if (!data)
 	{
-		cpy = f(lst);
-		if (!(cpy = ft_lstnew(cpy->content, cpy->content_size)))
-			return (NULL);
-		lst = lst->next;
+		new->data_size = 0;
+		new->data = NULL;
 	}
-	rabbit = cpy;
-	while (lst)
+	else
 	{
-		turtle = rabbit;
-		rabbit = f(lst);
-		if (!(rabbit = ft_lstnew(rabbit->content, rabbit->content_size)))
-			return (NULL);
-		turtle->next = rabbit;
-		lst = lst->next;
+		new->data_size = data_size;
+		new->data = ft_memmove(ft_memalloc(data_size),
+				data, data_size);
 	}
-	return (cpy);
+	new->next = NULL;
+	return (new);
 }

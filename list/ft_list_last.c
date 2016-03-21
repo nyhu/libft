@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_list_last.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/04 18:24:51 by tboos             #+#    #+#             */
-/*   Updated: 2016/02/22 20:32:17 by tboos            ###   ########.fr       */
+/*   Created: 2015/11/05 16:21:21 by tboos             #+#    #+#             */
+/*   Updated: 2015/11/05 19:53:55 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "list.h"
 
-void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
+t_list		*ft_list_last(t_list *begin_list)
 {
-	if (alst && *alst)
+	int	i;
+
+	i = 1;
+	while (begin_list->next)
 	{
-		del((*alst)->content, (*alst)->content_size);
-		free(*alst);
-		*alst = NULL;
+		begin_list = begin_list->next;
+		i++;
 	}
+	return (begin_list);
 }
