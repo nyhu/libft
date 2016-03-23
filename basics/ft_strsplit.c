@@ -28,7 +28,7 @@ char		**ft_strsplit(const char *s, char c)
 	memo = t;
 	nb = 0;
 	while (*t)
-		if (*t == c && ((*(t + 1) == c && !(*(t + 1) = 0)) || !*(t + 1)) && ++t)
+		if (t++ && *(t - 1) == c && ((*t == c && !(*t = 0)) || !*t))
 			nb++;
 	if (!nb || !(r = (char **)ft_memalloc(sizeof(char *) * (nb + 1))))
 		return (NULL);
