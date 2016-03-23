@@ -12,48 +12,30 @@
 
 #include "libft.h"
 
-static char	**ft_strsplitcpy(char *cpy, char c, size_t j, size_t i)
-{
-	char	**split;
-	char	**result;
-
-	if (!(split = (char **)ft_memalloc(sizeof(char *) * (j + 1))))
-		return (NULL);
-	j = 0;
-	while (cpy[i])
-	{
-		split[j] = &(cpy[i]);
-		while (cpy[i] != c && cpy[i])
-			i++;
-		cpy[i] = '\0';
-		j++;
-		if (!(cpy[i]))
-			break ;
-		i++;
-		while (cpy[i] == c)
-			i++;
-	}
-	split[j] = NULL;
-	result = ft_strtabdup(split);
-	free(split);
-	return (result);
-}
-
-char		**ft_unmalloc_strsplit(char *s, char c)
+char		**ft_strsplit(const char *s, char c)
 {
 	char	*t;
+	char	*memo;
 	char	**r;
 	size_t	nb;
+	size_t	i;
 
-	t = 0;
-	while (*s && *s == c)
-		s++;
-	t = s;
-	while (*t && t = ft_strchr(t, c) && ++nb)
-		while (*t && *t == c)
-			t++;
-	if (!nb || !(r = (char *)ft_memalloc(nb + 1)))
+	if (!s || !*s || !c)
 		return (NULL);
+	while (*s == c)
+		s++;
+	t = ft_strdup(s);
+	memo = t;
 	nb = 0;
-	while (*s 
+	while (*t)
+		if (*t == c && ((*(t + 1) == c && !(*(t + 1) = 0)) || !*(t + 1)))
+			nb++;
+	if (!nb || !(r = (char **)ft_memalloc(sizeof(char *) * (nb + 1))))
+		return (NULL);
+	i = -1;
+	t = memo;
+	while (++i < nb && (r[i] = ft_strdup(t)))
+		t = t + ft_strlen(t) + 1;
+	free(memo);
+	return (r);
 }
