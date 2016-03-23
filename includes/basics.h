@@ -12,7 +12,7 @@
 void	*ft_memalloc(size_t size);
 char	*ft_strnew(size_t size);
 void	ft_memdel(void **ap);
-int		ft_freegiveone(void *kill);
+int		ft_freegiveone(void **kill);
 void	ft_strdel(char **as);
 void	ft_strtabfree(char **tab);
 
