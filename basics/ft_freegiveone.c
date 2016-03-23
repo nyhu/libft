@@ -6,14 +6,15 @@
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/06 08:41:53 by tboos             #+#    #+#             */
-/*   Updated: 2016/03/06 08:42:02 by tboos            ###   ########.fr       */
+/*   Updated: 2016/03/23 20:40:30 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_freegiveone(void *kill)
+int		ft_freegiveone(void **kill)
 {
-	free(kill);
+	free(*kill);
+	*kill = NULL;
 	return (1);
 }
