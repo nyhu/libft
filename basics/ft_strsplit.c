@@ -6,7 +6,7 @@
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 18:24:51 by tboos             #+#    #+#             */
-/*   Updated: 2016/01/19 23:22:02 by tboos            ###   ########.fr       */
+/*   Updated: 2016/03/23 21:37:08 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,29 +39,21 @@ static char	**ft_strsplitcpy(char *cpy, char c, size_t j, size_t i)
 	return (result);
 }
 
-char		**ft_strsplit(char const *s, char c)
+char		**ft_unmalloc_strsplit(char *s, char c)
 {
-	char	*cpy;
-	size_t	i;
-	size_t	j;
+	char	*t;
+	char	**r;
+	size_t	nb;
 
-	while (*s == c)
+	t = 0;
+	while (*s && *s == c)
 		s++;
-	cpy = ft_strdup(s);
-	i = ft_strlen(cpy);
-	while (i && cpy[i - 1] == c)
-		i--;
-	cpy[i] = '\0';
-	j = 0;
-	while (i > 0)
-	{
-		if (cpy[i] == c)
-		{
-			j++;
-			while (cpy[i] == c)
-				i--;
-		}
-		i--;
-	}
-	return ((j ? ft_strsplitcpy(cpy, c, j + 1, i) : NULL));
+	t = s;
+	while (*t && t = ft_strchr(t, c) && ++nb)
+		while (*t && *t == c)
+			t++;
+	if (!nb || !(r = (char *)ft_memalloc(nb + 1)))
+		return (NULL);
+	nb = 0;
+	while (*s 
 }
