@@ -28,14 +28,13 @@ char		**ft_strsplit(const char *s, char c)
 	memo = t;
 	nb = 0;
 	while (*t)
-		if (!(*t != c && t++ && ((*t == c && !(*t = 0)) || !*t) && t++ && ++nb))
+		if (!(*t != c && t++ && ((*t == c && !(*t = 0) && t++) || !*t) && ++nb))
 			t++;
 	if (!nb || !(r = (char **)ft_memalloc(sizeof(char *) * (nb + 1))))
 		return (NULL);
 	i = -1;
 	t = memo;
-	while (++i < nb && (r[i] = ft_strdup(t)))
+	while (++i < nb && (r[i] = t))
 		t = t + ft_strlen(t) + 1;
-	free(memo);
 	return (r);
 }
