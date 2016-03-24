@@ -12,6 +12,22 @@
 
 #include "libft.h"
 
+char	*ft_strtabfindstart(char **tab, char *needle)
+{
+	int		i;
+	int		len;
+
+	i = 0;
+	len = ft_strlen(needle);
+	while (tab[i])
+	{
+		if (!ft_strncmp(tab[i], needle, len))
+			return (tab[i]);
+		i++;
+	}
+	return (NULL);
+}
+
 char	*ft_strtabfind(char **tab, char *needle)
 {
 	int		i;

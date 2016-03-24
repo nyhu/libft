@@ -63,6 +63,7 @@ char	*ft_strrchr(const char *s, int c);
 char	*ft_strstr(const char *haystack, const char *needle);
 char	*ft_strnstr(const char *s1, const char *s2, size_t n);
 char	*ft_strtabfind(char **tab, char *needle);
+char	*ft_strtabfindstart(char **tab, char *needle);
 
 /*
 ** COMPARE
