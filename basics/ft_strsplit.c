@@ -33,7 +33,7 @@ char		**ft_strsplit(const char *s, char c)
 	i = -1;
 	while (++i < nb && (r[i] = t))
 	{
-		t = t + ft_strchr(t, c);
+		t = ft_strchr(t, c);
 		while (*t == c && !(*t = 0))
 			t++;
 	}
