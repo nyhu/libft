@@ -21,7 +21,7 @@ void	ft_putstrtab(char const **s, char c)
 	while (s[++i])
 	{
 		ft_putstr(s[i]);
-		if (s[1 + 1])
+		if (s[i + 1])
 			ft_putchar(c);
 	}
 }
