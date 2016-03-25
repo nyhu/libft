@@ -20,6 +20,7 @@ void	ft_strtabfree(char **tab);
 ** SIZING
 */
 size_t	ft_strlen(const char *s);
+int		ft_strtablen(char **t);
 
 /*
 ** STRING DUP
@@ -37,22 +38,21 @@ char	*ft_strmapi(char const *s, char(*f)(unsigned int, char));
 char	*ft_strslashjoin(char *s1, char *s2);
 char	*ft_strtrim(char const *s);
 char	**ft_strsplit(char *s, char c);
+char	**ft_strncmptabdel(char **dest, char *needle);
+char	**ft_strstrtabdel(char **dest, char *needle);
 
 /*
-** COPY
+** COPY && CAT
 */
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 char	*ft_strcpy(char *dest, const char *src);
 char	*ft_strncpy(char *dest, const char *src, size_t n);
-
-/*
-** CAT
-*/
 char	*ft_strcat(char *dest, const char *src);
 char	*ft_strncat(char *dest, const char *src, size_t n);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
+char	**ft_strtabadd(char **dest, char *new);
 
 /*
 ** FIND
