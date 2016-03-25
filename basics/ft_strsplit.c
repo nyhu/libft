@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char		**ft_strsplit(const char *s, char c)
+char		**ft_strsplit(char *s, char c)
 {
 	char	*t;
 	char	**r;
@@ -23,20 +23,16 @@ char		**ft_strsplit(const char *s, char c)
 		return (NULL);
 	while (*s == c)
 		s++;
-	t = ft_strdup(s);
+	t = s;
 	nb = 0;
 	while (*s)
-		if (*(s++) != c && (*s == c || !*s))
+		if (s++ && *(s - 1) != c && ((*s == c && !(*s = '\0') && s++ ) || !*s))
 			nb++;
-	if (!nb || !(r = (char **)malloc(sizeof(char *) * (nb + 1))))
+	if (!nb || !(r = (char **)ft_memalloc(sizeof(char *) * (nb + 1))))
 		return (NULL);
 	i = -1;
-	while (++i < nb && (r[i] = t))
-	{
-		t = ft_strchr(t, c);
-		while (*t == c && !(*t = 0))
+	while (++i < nb && (r[i] = ft_strdup(t)) && (t = t + ft_strlen(t) + 1))
+		while (*t == c)
 			t++;
-	}
-	r[i] = NULL;
 	return (r);
 }
