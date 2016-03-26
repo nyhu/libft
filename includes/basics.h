@@ -41,6 +41,7 @@ char	*ft_strtrim(char const *s);
 char	**ft_strsplit(char *s, char c);
 char	**ft_strncmptabdel(char **dest, char *needle);
 char	**ft_strstrtabdel(char **dest, char *needle);
+char	**ft_strtabdiv(char **tab, char *needle);
 
 /*
 ** COPY && CAT
