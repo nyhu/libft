@@ -31,7 +31,8 @@ char		**ft_strsplit(char *s, char c)
 	if (!nb || !(r = (char **)ft_memalloc(sizeof(char *) * (nb + 1))))
 		return (NULL);
 	i = -1;
-	while (++i < nb && (r[i] = ft_strdup(t)) && (t = t + ft_strlen(t) + 1))
+	while (++i < nb && (r[i] = ft_strdup(t))
+		&& (t = t + ft_strlen(t) + 1))
 		while (*t == c)
 			t++;
 	return (r);
