@@ -6,13 +6,14 @@
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/05 15:21:47 by tboos             #+#    #+#             */
-/*   Updated: 2015/11/06 18:43:26 by tboos            ###   ########.fr       */
+/*   Updated: 2016/03/28 16:32:20 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "list.h"
 
-void		ft_list_push_front(t_list **begin_list, void *data, size_t data_size)
+void		ft_list_push_front(t_list **begin_list, void *data,
+			size_t data_size)
 {
 	t_list	*p;
 

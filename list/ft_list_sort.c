@@ -6,7 +6,7 @@
 /*   By: tboos <to-uss@noos.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 22:35:30 by tboos             #+#    #+#             */
-/*   Updated: 2015/12/16 22:35:57 by tboos            ###   ########.fr       */
+/*   Updated: 2016/03/28 16:31:46 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	ft_loopsort(t_list *beg, t_list *rab, t_list *last, int (*cmp)())
 	}
 }
 
-void	ft_list_sort(t_list **begin_list, int (*cmp)())
+void		ft_list_sort(t_list **begin_list, int (*cmp)())
 {
 	t_list	*rabbit;
 	t_list	*last;

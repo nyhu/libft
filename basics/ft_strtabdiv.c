@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtabdiv.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/03/28 16:30:40 by tboos             #+#    #+#             */
+/*   Updated: 2016/03/28 16:30:54 by tboos            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	**ft_strtabdiv(char **tab, char *needle)
@@ -11,7 +23,7 @@ char	**ft_strtabdiv(char **tab, char *needle)
 	div = tab;
 	while (div[++i])
 		if (!strcmp(div[i], needle))
-			break;
+			break ;
 	if (!div[i])
 		return (NULL);
 	free(div[i]);
