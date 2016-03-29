@@ -6,7 +6,7 @@
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/28 16:29:53 by tboos             #+#    #+#             */
-/*   Updated: 2016/03/28 16:29:54 by tboos            ###   ########.fr       */
+/*   Updated: 2016/03/29 16:24:05 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ char	**ft_strtabadd(char **dest, char *new)
 	char	**res;
 
 	if ((i = ft_strtablen(dest)) < 0
-		|| (res = (char **)ft_memalloc(sizeof(char *) * (i + 2))))
+		|| !(res = (char **)ft_memalloc(sizeof(char *) * (i + 2))))
 		return (NULL);
 	res[i] = new;
 	while (--i >= 0)
