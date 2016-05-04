@@ -26,7 +26,7 @@ char	*ft_strnew(size_t size);
 void	ft_memdel(void **ap);
 int		ft_freegiveone(void **kill);
 void	ft_strdel(char **as);
-void	ft_strtabfree(char **tab);
+void	ft_strtabfree(char **mtab);
 
 /*
 ** SIZING
@@ -53,7 +53,7 @@ char	*ft_strtrim(char const *s);
 char	**ft_strsplit(char *s, char c);
 char	**ft_strncmptabdel(char **dest, char *needle);
 char	**ft_strstrtabdel(char **dest, char *needle);
-char	**ft_strtabdiv(char **tab, char *needle);
+char	**ft_strtabdiv(char **mtab, char *needle);
 
 /*
 ** COPY && CAT
@@ -76,10 +76,10 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strstr(const char *haystack, const char *needle);
 char	*ft_strnstr(const char *s1, const char *s2, size_t n);
-char	*ft_strtabfind(char **tab, char *needle);
-int		ft_strtabifind(char **tab, char *needle);
-char	*ft_strtabfindstart(char **tab, char *needle);
-int		ft_strtabifindstart(char **tab, char *needle);
+char	*ft_strtabfind(char **mtab, char *needle);
+int		ft_strtabifind(char **mtab, char *needle);
+char	*ft_strtabfindstart(char **mtab, char *needle);
+int		ft_strtabifindstart(char **mtab, char *needle);
 
 /*
 ** COMPARE

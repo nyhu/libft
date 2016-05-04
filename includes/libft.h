@@ -42,9 +42,9 @@ char	*ft_st_itoa(int n);
 */
 void	ft_putcstr(char *str, char c, int size, char pos);
 void	ft_putcolendl(char const *s, char const *col);
-void	ft_putstr_nbr_str(char *str, int nbr, char *tab);
+void	ft_putstr_nbr_str(char *str, int nbr, char *mtab);
 void	ft_putstr_str_str_fd(char *name, char *file, char *error, int fd);
-void	ft_putstr_nbr_str(char *str, int nbr, char *tab);
+void	ft_putstr_nbr_str(char *str, int nbr, char *mtab);
 
 /*
 ** PRINT
