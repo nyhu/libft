@@ -11,6 +11,36 @@
 /* ************************************************************************** */
 
 #include "list.h"
+#include "dclist.h"
+
+t_dclist		*ft_dclstmap(t_dclist *lst, t_dclist *(*f)(t_dclist *elem))
+{
+	t_dclist	*cpy;
+	t_dclist	*rabbit;
+	t_dclist	*turtle;
+	t_dclist	*stop;
+
+	cpy = NULL;
+	if ((stop = lst))
+	{
+		if (!(cpy = f(lst)))
+			return (NULL);
+		lst = lst->next;
+	}
+	rabbit = cpy;
+	while (lst != stop)
+	{
+		turtle = rabbit;
+		if (!(rabbit = f(lst)))
+			return (NULL);
+		turtle->next = rabbit;
+		rabbit->prev = turtle;
+		lst = lst->next;
+	}
+	cpy->prev = rabbit;
+	rabbit->next = cpy;
+	return (cpy);
+}
 
 t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {

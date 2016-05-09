@@ -11,10 +11,28 @@
 /* ************************************************************************** */
 
 #include "list.h"
+#include "dclist.h"
+
+void	ft_dclstdel(t_dclist **alst, void (*del)(void *, size_t))
+{
+	t_dclist	*tmp;
+	t_dclist	*stop;
+
+	if (alst)
+		stop = *alst;
+	tmp = NULL;
+	while (alst && *alst && tmp != stop)
+	{
+		tmp = (*alst)->next;
+		ft_dclstdelone(alst, del);
+		*alst = tmp;
+	}
+	*alst = NULL;
+}
 
 void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	t_list *tmp;
+	t_list		*tmp;
 
 	while (alst && *alst)
 	{
@@ -22,4 +40,5 @@ void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 		ft_lstdelone(alst, del);
 		*alst = tmp;
 	}
+	*alst = NULL;
 }
