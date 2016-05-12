@@ -41,7 +41,7 @@ t_list				*ft_list_last(t_list *begin_list);
 t_list				*ft_list_find(t_list *begin_list, void *data_ref,
 						int (*cmp)());
 t_list				*ft_list_at(t_list *begin_list, unsigned int nbr);
-t_list				*ft_lstnew(void const *content, size_t content_size);
+t_list				*ft_lstnew(void *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));

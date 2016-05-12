@@ -43,7 +43,7 @@ t_dclist			*ft_dclist_last(t_dclist *begin_list);
 t_dclist			*ft_dclist_find(t_dclist *begin_list, void *data_ref,
 						int (*cmp)());
 t_dclist			*ft_dclist_at(t_dclist *begin_list, unsigned int nbr);
-t_dclist			*ft_dclstnew(void const *content, size_t content_size);
+t_dclist			*ft_dclstnew(void *content, size_t content_size);
 void				ft_dclstdelone(t_dclist **alst,
 						void (*del)(void *, size_t));
 void				ft_dclstdel(t_dclist **alst, void (*del)(void *, size_t));
