@@ -16,6 +16,7 @@
 void	ft_list_free_data(void *data, size_t data_size)
 {
 	data_size = 0;
+	(void)data_size;
 	free(data);
 }
 

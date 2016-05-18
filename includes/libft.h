@@ -30,14 +30,12 @@
 void	ft_usage(char *name, char *usage);
 void	ft_exit(int mode);
 int		ft_status(int value);
-
 /*
 ** CHAR <-> INT
 */
 int		ft_atoi(const char *str);
 char	*ft_itoa(int n);
 char	*ft_st_itoa(int n);
-
 /*
 ** Padding et autre en attente printf
 */
@@ -48,11 +46,9 @@ void	ft_putcolendl(char const *s, char const *col);
 void	ft_putstr_nbr_str(char *str, int nbr, char *mtab);
 void	ft_putstr_str_str_fd(char *name, char *file, char *error, int fd);
 void	ft_putstr_nbr_str(char *str, int nbr, char *mtab);
-
 /*
 ** PRINT
 */
-int		ft_printf(const char *format, ...);
 void	ft_putchar(char c);
 void	ft_putstr(char const *s);
 void	ft_putendl(char const *s);
