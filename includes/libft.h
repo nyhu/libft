@@ -52,6 +52,7 @@ void	ft_putstr_nbr_str(char *str, int nbr, char *mtab);
 /*
 ** PRINT
 */
+int		ft_printf(const char *format, ...);
 void	ft_putchar(char c);
 void	ft_putstr(char const *s);
 void	ft_putendl(char const *s);

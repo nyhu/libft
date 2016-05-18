@@ -13,6 +13,18 @@
 #include "list.h"
 #include "dclist.h"
 
+void	ft_list_free_data(void *data, size_t data_size)
+{
+	data_size = 0;
+	free(data);
+}
+
+int		ft_dclstdel_err(t_dclist **alst, void (*del)(void *, size_t))
+{
+	ft_dclstdel(alst, (*del));
+	return (-1);
+}
+
 void	ft_dclstdel(t_dclist **alst, void (*del)(void *, size_t))
 {
 	t_dclist	*tmp;
@@ -28,6 +40,12 @@ void	ft_dclstdel(t_dclist **alst, void (*del)(void *, size_t))
 		*alst = tmp;
 	}
 	*alst = NULL;
+}
+
+int		ft_lstdel_err(t_list **alst, void (*del)(void *, size_t))
+{
+	ft_lstdel(alst, (*del));
+	return (-1);
 }
 
 void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))

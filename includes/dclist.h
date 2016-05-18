@@ -47,6 +47,8 @@ t_dclist			*ft_dclstnew(void *content, size_t content_size);
 void				ft_dclstdelone(t_dclist **alst,
 						void (*del)(void *, size_t));
 void				ft_dclstdel(t_dclist **alst, void (*del)(void *, size_t));
+int					ft_dclstdel_err(t_dclist **alst,
+						void (*del)(void *, size_t));
 void				ft_dclstiter(t_dclist *lst, void (*f)(t_dclist *elem));
 t_dclist			*ft_dclstmap(t_dclist *lst,
 						t_dclist *(*f)(t_dclist *elem));
