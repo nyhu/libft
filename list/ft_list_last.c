@@ -6,17 +6,17 @@
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/05 16:21:21 by tboos             #+#    #+#             */
-/*   Updated: 2015/11/05 19:53:55 by tboos            ###   ########.fr       */
+/*   Updated: 2016/05/23 08:55:31 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "list.h"
 #include "dclist.h"
 
-t_dclist		*ft_dclist_last(t_dclist *begin_list)
+t_dclist	*ft_dclist_last(t_dclist *begin_list)
 {
-	int	i;
-	t_dclist *memo;
+	int			i;
+	t_dclist	*memo;
 
 	i = 1;
 	memo = begin_list;
@@ -30,7 +30,7 @@ t_dclist		*ft_dclist_last(t_dclist *begin_list)
 
 t_list		*ft_list_last(t_list *begin_list)
 {
-	int	i;
+	int			i;
 
 	i = 1;
 	while (begin_list->next)

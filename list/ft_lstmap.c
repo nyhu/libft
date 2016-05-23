@@ -6,14 +6,14 @@
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 18:24:51 by tboos             #+#    #+#             */
-/*   Updated: 2016/02/22 20:35:04 by tboos            ###   ########.fr       */
+/*   Updated: 2016/05/23 08:53:10 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "list.h"
 #include "dclist.h"
 
-t_dclist		*ft_dclstmap(t_dclist *lst, t_dclist *(*f)(t_dclist *elem))
+t_dclist	*ft_dclstmap(t_dclist *lst, t_dclist *(*f)(t_dclist *elem))
 {
 	t_dclist	*cpy;
 	t_dclist	*rabbit;

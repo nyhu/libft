@@ -6,17 +6,17 @@
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/05 22:56:43 by tboos             #+#    #+#             */
-/*   Updated: 2015/11/06 00:16:40 by tboos            ###   ########.fr       */
+/*   Updated: 2016/05/23 08:55:54 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "list.h"
 #include "dclist.h"
 
-t_dclist		*ft_dclist_find(t_dclist *begin_list, void *data_ref,
-				int (*cmp)())
+t_dclist	*ft_dclist_find(t_dclist *begin_list, void *data_ref,
+			int (*cmp)())
 {
-	t_dclist *memo;
+	t_dclist	*memo;
 
 	memo = begin_list;
 	if ((*cmp)(begin_list->data, data_ref) == 0)
