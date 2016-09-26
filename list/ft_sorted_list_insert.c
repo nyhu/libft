@@ -6,7 +6,7 @@
 /*   By: tboos <to-uss@noos.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 22:34:01 by tboos             #+#    #+#             */
-/*   Updated: 2016/05/23 08:54:45 by tboos            ###   ########.fr       */
+/*   Updated: 2015/12/17 01:15:39 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "dclist.h"
 
 static void	ft_msdclist(t_dclist **begin_list, t_dclist *new, t_dclist *turtle,
-		t_dclist *rabbit)
+			t_dclist *rabbit)
 {
 	if (turtle)
 	{
@@ -32,35 +32,38 @@ static void	ft_msdclist(t_dclist **begin_list, t_dclist *new, t_dclist *turtle,
 }
 
 void		ft_sorted_dclist_insert(t_dclist **begin_list, t_dclist *new,
-		int (*cmp)())
+			int (*cmp)())
 {
 	t_dclist	*rabbit;
 	t_dclist	*turtle;
 	t_dclist	*stop;
 
-	if (new && !(*begin_list))
+	if (new)
 	{
-		*begin_list = new;
-		new->next = new;
-		new->prev = new;
-	}
-	else if (new)
-	{
-		rabbit = *begin_list;
-		stop = NULL;
-		turtle = NULL;
-		while (rabbit != stop && (*cmp)(new->data, rabbit->data) > 0)
+		if (!(*begin_list))
 		{
-			stop = *begin_list;
-			turtle = rabbit;
-			rabbit = rabbit->next;
+			*begin_list = new;
+			new->next = new;
+			new->prev = new;
 		}
-		ft_msdclist(begin_list, new, turtle, rabbit);
+		else
+		{
+			rabbit = *begin_list;
+			stop = NULL;
+			turtle = NULL;
+			while (rabbit != stop && (*cmp)(new->data, rabbit->data) > 0)
+			{
+				stop = *begin_list;
+				turtle = rabbit;
+				rabbit = rabbit->next;
+			}
+			ft_msdclist(begin_list, new, turtle, rabbit);
+		}
 	}
 }
 
 void		ft_sorted_list_insert(t_list **begin_list, t_list *new,
-		int (*cmp)())
+			int (*cmp)())
 {
 	t_list	*rabbit;
 	t_list	*turtle;

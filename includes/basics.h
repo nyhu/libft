@@ -6,7 +6,7 @@
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/03/28 16:28:14 by tboos             #+#    #+#             */
-/*   Updated: 2016/03/28 16:28:23 by tboos            ###   ########.fr       */
+/*   Updated: 2016/09/21 11:15:37 by rbaran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int		ft_strtablen(char **t);
 */
 char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const*s2);
+char	*ft_strinsert(char *dest, char *str, char *pos);
 char	**ft_strtabdup(char **src);
 char	*ft_strdup(const char *s);
 char	*ft_strmap(char const *s, char (*f)(char));
@@ -50,6 +51,7 @@ char	*ft_strmapi(char const *s, char(*f)(unsigned int, char));
 char	*ft_strslashjoin(char *s1, char *s2);
 char	*ft_strchrjoin(char *s1, char c, char *s2);
 char	*ft_strtrim(char const *s);
+char	**ft_strtabnew(char *s);
 char	**ft_strsplit(char *s, char c);
 char	**ft_strncmptabdel(char **dest, char *needle);
 char	**ft_strstrtabdel(char **dest, char *needle);
@@ -75,7 +77,9 @@ void	*ft_memchr(const void *s, int c, size_t n);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strstr(const char *haystack, const char *needle);
+int		ft_strstri(const char *haystack, const char *needle);
 char	*ft_strnstr(const char *s1, const char *s2, size_t n);
+void	ft_strtabiter(char **t, void (*f)(char *str));
 char	*ft_strtabfind(char **mtab, char *needle);
 int		ft_strtabifind(char **mtab, char *needle);
 char	*ft_strtabfindstart(char **mtab, char *needle);
@@ -93,6 +97,7 @@ int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
+int		ft_isspace(char c);
 int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);

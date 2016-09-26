@@ -16,16 +16,14 @@ static int			ft_free_line(t_line **begin, t_line *next)
 {
 	while ((*begin)->next != next)
 		*begin = (*begin)->next;
-	if (next == *begin)
+	if ((*begin)->next == *begin)
 	{
-		free(next->data);
-		free(next);
+		free(*begin);
 		*begin = NULL;
 	}
 	else
 	{
 		(*begin)->next = next->next;
-		free(next->data);
 		free(next);
 	}
 	return (1);
@@ -38,20 +36,20 @@ static int			ft_findread(t_line **begin, t_line *next, int fd, int mode)
 
 	while (*begin && (*begin)->fd != fd && (*begin)->next != next)
 		*begin = (*begin)->next;
-	if (mode == FIND && (*begin) && (*begin)->fd == fd)
+	if (mode == FIND && *begin && (*begin)->fd == fd)
 		return (1);
 	if (!(ret = read(fd, tmp, BUFF_SIZE)))
 		return (0);
 	tmp[ret] = '\0';
 	if (mode == READ && ft_strcpy((*begin)->data, tmp))
 		return (ret);
-	if (!(*begin) && !(*begin = MALLOC))
+	if (*begin && (*begin)->fd != fd && !((*begin)->next = MALLOC))
 		return (-1);
-	else if ((*begin)->fd != fd && !((*begin)->next = MALLOC))
+	else if (!(*begin) && !(*begin = MALLOC))
 		return (-1);
 	if (next)
 		*begin = (*begin)->next;
-	(*begin)->data = ft_memcpy(ft_memalloc(BUFF_SIZE + 1), tmp, BUFF_SIZE);
+	ft_memcpy((*begin)->data, tmp, BUFF_SIZE);
 	(*begin)->ret = ret;
 	(*begin)->fd = fd;
 	(*begin)->next = (next ? next : *begin);
@@ -76,19 +74,10 @@ static int			ft_strcut(char *src, int c, int ret)
 	return (0);
 }
 
-int					ft_gnl_reset(t_line **begin)
+static int			ft_gnl_reset(t_line **begin)
 {
-	t_line			*kill;
-	t_line			*memo;
-
-	kill = (*begin)->next;
-	while (kill != *begin)
-	{
-		memo = kill->next;
-		ft_free_line(begin, kill);
-		kill = memo;
-	}
-	ft_free_line(begin, kill);
+	while (*begin)
+		ft_free_line(begin, (*begin)->next);
 	return (-1);
 }
 
@@ -103,20 +92,19 @@ int					get_next_line(int const fd, char **line)
 		|| (test = ft_findread(&begin, begin, fd, FIND)) <= 0)
 		return ((fd < 0 ? ft_gnl_reset(&begin) : test));
 	*line = ft_memalloc(1);
-	while (*line && !(test = ft_strcut(DATA, '\n', RET))
-		&& (tmp = *line)
-		&& (*line = ft_strjoin(*line, DATA))
-		&& (RET = ft_findread(&begin, begin, fd, READ)))
-		free(tmp);
-	if (!(*line))
-		return (-1);
+	while (!(test = ft_strcut(DATA, '\n', RET))
+		&& (tmp = *line) && (*line = ft_strjoin(*line, DATA))
+		&& (RET = ft_findread(&begin, begin, fd, READ))
+		&& ft_freegiveone((void **)&tmp))
+		if (!(*line))
+			return (-1);
 	if (RET && test)
 	{
 		tmp = *line;
 		*line = ft_strjoin(*line, DATA);
 		free(tmp);
 		RET = RET - test;
-		DATA = ft_strncpy(DATA, DATA + test, RET);
+		ft_strncpy(DATA, DATA + test, RET);
 	}
 	return ((RET ? 1 : ft_free_line(&begin, begin)));
 }
