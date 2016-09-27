@@ -56,10 +56,12 @@ char	**ft_strtabadd(char **dest, char *new)
 	char	**res;
 
 	i = 0;
+	if (!new || !(new[0]))
+		return (dest);
 	if (!dest && !(res = (char **)ft_memalloc(sizeof(char *) * 2)))
 		return (NULL);
-	else if ((i = ft_strtablen(dest)) < 0
-		|| !(res = (char **)ft_memalloc(sizeof(char *) * (i + 2))))
+	else if (dest && ((i = ft_strtablen(dest)) < 0
+		|| !(res = (char **)ft_memalloc(sizeof(char *) * (i + 2)))))
 		return (NULL);
 	res[i] = new;
 	while (--i >= 0)
