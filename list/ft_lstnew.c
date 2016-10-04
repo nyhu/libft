@@ -6,9 +6,10 @@
 /*   By: tboos <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/04 18:24:51 by tboos             #+#    #+#             */
-/*   Updated: 2016/02/22 20:35:57 by tboos            ###   ########.fr       */
+/*   Updated: 2016/10/04 17:00:40 by tboos            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 
 t_dclist	*ft_dclstnew(void *data, size_t data_size)
@@ -26,9 +27,9 @@ t_dclist	*ft_dclstnew(void *data, size_t data_size)
 	return (new);
 }
 
-t_list	*ft_lstnew(void *data, size_t data_size)
+t_list		*ft_lstnew(void *data, size_t data_size)
 {
-	t_list	*new;
+	t_list		*new;
 
 	if (!(new = (t_list *)malloc(sizeof(t_list))))
 		return (NULL);
